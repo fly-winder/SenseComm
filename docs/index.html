@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=20260522" />
+  <link rel="stylesheet" href="styles.css?v=20260817" />
 </head>
 
 <body>
@@ -748,12 +748,22 @@ best_beam = beam_label[<span class="str">"best_beam_index_3d"</span>]</code></pr
       <div class="tutorial-subsection">
         <h3>How to use</h3>
         <p>
-          Install the ray-tracing runtime, prepare the exported scene assets, select the scenes and generation
-          parameters, then run the batch script from the project root.
+          Generate SenseComm data either from the command line for scripted batch experiments or through the
+          interactive web interface for visual configuration and sample preview.
         </p>
       </div>
 
-      <div class="code-block tutorial-code tutorial-command-block">
+      <div class="tutorial-method">
+        <div class="tutorial-method-heading">
+          <span>Option 1</span>
+          <h4>Command Line</h4>
+          <p>
+            Install the ray-tracing runtime, prepare the exported scene assets, select the scenes and generation
+            parameters, then run the batch script from the project root.
+          </p>
+        </div>
+
+        <div class="code-block tutorial-code tutorial-command-block">
 <pre><code><span class="comment"># Clone the project</span>
 git clone https://github.com/fly-winder/V2X-SenseComm.git
 cd V2X-SenseComm
@@ -768,6 +778,43 @@ configs/base_config.py        <span class="comment"># camera/lidar/radar/gps, ch
 
 <span class="comment"># Run dataset generation</span>
 python run/dataset_generation.py</code></pre>
+        </div>
+      </div>
+
+      <div class="tutorial-method web-interface-method">
+        <div class="tutorial-method-heading">
+          <span>Option 2</span>
+          <h4>Web Interface</h4>
+          <p>
+            Use the Streamlit interface to configure scenes, trajectories, sensor modules, communication settings,
+            and output paths without editing configuration files manually.
+          </p>
+        </div>
+
+        <div class="code-block tutorial-code tutorial-command-block">
+<pre><code><span class="comment"># Clone the project</span>
+git clone https://github.com/fly-winder/V2X-SenseComm.git
+cd V2X-SenseComm
+
+<span class="comment"># Install dependencies</span>
+python -m pip install -r requirements.txt
+
+<span class="comment"># Start the generation UI</span>
+python -m streamlit run app/generator_app.py</code></pre>
+        </div>
+
+        <p class="web-interface-instruction">
+          Open <a href="http://localhost:8501">http://localhost:8501</a> in your browser, configure the generation
+          settings, and click <strong>Run Generation</strong>.
+        </p>
+
+        <figure class="web-interface-figure">
+          <img src="assets/figures/tutorials/v2x-sensecomm-web-interface.png" alt="V2X-SenseComm interactive web interface for dataset generation">
+          <figcaption>
+            The Basic Mode interface provides run settings, scene conditions, output configuration, and synchronized
+            previews of image, LiDAR, radar, channel, GPS, and beam-label data.
+          </figcaption>
+        </figure>
       </div>
     </section>
 

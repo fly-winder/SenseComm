@@ -1317,6 +1317,86 @@ pre code {
   margin: 22px auto 0;
 }
 
+.tutorial-method {
+  width: min(100%, 1180px);
+  margin: 26px auto 0;
+  padding: 30px;
+  border: 1px solid #dfe8f3;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.07);
+}
+
+.tutorial-method + .tutorial-method {
+  margin-top: 28px;
+}
+
+.tutorial-method-heading span {
+  display: inline-flex;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #e8f6ff;
+  color: #0b5ea8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tutorial-method-heading h4 {
+  margin: 12px 0 8px;
+  color: #10233f;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+}
+
+.tutorial-method-heading p {
+  max-width: 920px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+.tutorial-method .tutorial-command-block {
+  width: 100%;
+}
+
+.web-interface-instruction {
+  margin: 22px 0 0;
+  padding: 16px 18px;
+  border-left: 4px solid #0ea5e9;
+  border-radius: 0 12px 12px 0;
+  background: #eef8ff;
+  color: #334b66;
+  line-height: 1.65;
+}
+
+.web-interface-instruction a {
+  color: #0b5ea8;
+  font-weight: 700;
+}
+
+.web-interface-figure {
+  margin: 24px 0 0;
+  overflow: hidden;
+  border: 1px solid #dfe8f3;
+  border-radius: 18px;
+  background: #f8fbff;
+}
+
+.web-interface-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.web-interface-figure figcaption {
+  padding: 14px 18px 16px;
+  color: #607086;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
 .tutorial-code pre,
 .tutorial-code code,
 .tutorial-code span {
@@ -1689,6 +1769,15 @@ pre code {
 
   #tutorials .section-title h2 {
     white-space: normal;
+  }
+
+  .tutorial-method {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .web-interface-figure {
+    border-radius: 14px;
   }
 
   .scenario-summary,
